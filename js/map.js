@@ -21,10 +21,11 @@
 
   var locationOfAnElement = function (docElement) {
     var body = document.body;
+    var mapLocation = docElem.getBoundingClientRect();
     var scrollTop = window.pageYOffset || docElement.scrollTop || body.scrollTop;
     var scrollLeft = window.pageXOffset || docElement.scrollLeft || body.scrollLeft;
-    var mapLocateX = mapLocat.x + scrollLeft + mapLocat.width / 2;
-    var mapLocateY = mapLocat.y + scrollTop + mapLocat.height;
+    var mapLocateX = mapLocation.x + scrollLeft + mapLocation.width / 2;
+    var mapLocateY = mapLocation.y + scrollTop + mapLocation.height;
     return (Math.round(mapLocateX) + ', ' + Math.round(mapLocateY));
   };
 
@@ -91,6 +92,7 @@
         docElem.style.left = (docElem.offsetLeft - shift.x) + 'px';
       }
 
+      console.log(locationOfAnElement(docElem));
       document.querySelector('#address').value = locationOfAnElement(docElem);
     };
 

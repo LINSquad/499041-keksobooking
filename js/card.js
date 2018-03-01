@@ -5,7 +5,7 @@
 
   window.card = function (element) {
     var newPosts = similarTemplate.cloneNode(true);
-    var massP = newPosts.querySelectorAll('p');
+    var arrayLine = newPosts.querySelectorAll('p');
     var elementInnerText = function (elem, str) {
       newPosts.querySelector(elem).innerText = str;
     };
@@ -28,9 +28,9 @@
     } else if (element.offer.rooms === 5) {
       room = ' комнат';
     }
-    massP[2].innerText = element.offer.rooms + room + ' для ' + element.offer.guests + ' гостей';
+    arrayLine[2].innerText = element.offer.rooms + room + ' для ' + element.offer.guests + ' гостей';
 
-    massP[3].innerText = 'Заезд после ' + element.offer.checkin + ', выезд до ' + element.offer.checkout;
+    arrayLine[3].innerText = 'Заезд после ' + element.offer.checkin + ', выезд до ' + element.offer.checkout;
     newPosts.querySelector('.popup__features').style.paddingLeft = '0';
 
     var featureAll = newPosts.querySelectorAll('ul.popup__features > li');
@@ -42,7 +42,7 @@
       featureAll[j].className = 'feature feature--' + element.offer.features[j];
     }
 
-    massP[4].innerText = element.offer.description;
+    arrayLine[4].innerText = element.offer.description;
 
     var ulPictures = newPosts.querySelector('.popup__pictures');
     ulPictures.style.paddingLeft = '0';

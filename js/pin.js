@@ -3,7 +3,7 @@
   var PIN_WIDTH = 40;
   var PIN_HEIGHT = 40;
 
-  window.pin = function (element) {
+  window.renderingPin = function (element) {
     var newElement = document.createElement('button');
     newElement.style = 'left: ' + (element.location.x + PIN_WIDTH / 2) +
       'px; top: ' + (element.location.y + PIN_HEIGHT) + 'px;';

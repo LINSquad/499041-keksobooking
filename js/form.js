@@ -6,18 +6,18 @@
     fieldsets[i].setAttribute('disabled', true);
   }
 
-  var typeHoume = document.querySelector('#type');
-  var priceHoume = document.querySelector('#price');
+  var typeHome = document.querySelector('#type');
+  var priceHome = document.querySelector('#price');
 
-  typeHoume.addEventListener('change', function () {
-    if (typeHoume.value === 'bungalo') {
-      priceHoume.min = '0';
+  typeHome.addEventListener('change', function () {
+    if (typeHome.value === 'bungalo') {
+      priceHome.min = '0';
     } else if (typeHoume.value === 'flat') {
-      priceHoume.min = '1000';
+      priceHome.min = '1000';
     } else if (typeHoume.value === 'house') {
-      priceHoume.min = '5000';
+      priceHome.min = '5000';
     } else {
-      priceHoume.min = '10000';
+      priceHome.min = '10000';
     }
   }
   );
@@ -37,34 +37,34 @@
   );
 
   var roomNumber = document.querySelector('#room_number');
-  var option = document.querySelector('#capacity').querySelectorAll('option');
+  var options = document.querySelector('#capacity').querySelectorAll('option');
   var capacity = document.querySelector('#capacity');
 
   roomNumber.addEventListener('change', function () {
     if (roomNumber.value === '1') {
       capacity.value = '1';
-      option[0].disabled = 'disabled';
-      option[1].disabled = 'disabled';
-      option[2].disabled = '';
-      option[3].disabled = 'disabled';
+      options[0].disabled = 'disabled';
+      options[1].disabled = 'disabled';
+      options[2].disabled = '';
+      options[3].disabled = 'disabled';
     } else if (roomNumber.value === '2') {
       capacity.value = '2';
-      option[0].disabled = 'disabled';
-      option[1].disabled = '';
-      option[2].disabled = '';
-      option[3].disabled = 'disabled';
+      options[0].disabled = 'disabled';
+      options[1].disabled = '';
+      options[2].disabled = '';
+      options[3].disabled = 'disabled';
     } else if (roomNumber.value === '3') {
       capacity.value = '3';
-      option[0].disabled = '';
-      option[1].disabled = '';
-      option[2].disabled = '';
-      option[3].disabled = 'disabled';
+      options[0].disabled = '';
+      options[1].disabled = '';
+      options[2].disabled = '';
+      options[3].disabled = 'disabled';
     } else {
       capacity.value = '0';
-      option[0].disabled = 'disabled';
-      option[1].disabled = 'disabled';
-      option[2].disabled = 'disabled';
-      option[3].disabled = '';
+      options[0].disabled = 'disabled';
+      options[1].disabled = 'disabled';
+      options[2].disabled = 'disabled';
+      options[3].disabled = '';
     }
   }
   );

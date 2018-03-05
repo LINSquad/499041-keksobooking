@@ -22,7 +22,7 @@
     document.body.insertAdjacentElement('afterbegin', node);
   };
 
-  window.loader(onLoad, onError);
+  window.getLoader(onLoad, onError);
 
   var nearByAds = [];
 
@@ -157,7 +157,7 @@
             if (mapPins[i + 1].style.left === (nearByAds[j].location.x + PIN_WIDTH / 2) + 'px' &&
               mapPins[i + 1].style.top === (nearByAds[j].location.y + PIN_HEIGHT) + 'px') {
               if (mapCard !== null) {
-                var sp1 = map.appendChild(window.card(nearByAds[j]));
+                var sp1 = map.appendChild(window.getCard(nearByAds[j]));
                 map.replaceChild(sp1, mapCard);
               } else {
                 map.appendChild(window.card(nearByAds[j]));
@@ -194,15 +194,15 @@
   );
 
   filters.addEventListener('click', function () {
-    var mapPin2 = document.querySelectorAll('.map__pin');
+    var mapPinsAll = document.querySelectorAll('.map__pin');
     var mapCard = document.querySelector('.map__card');
     if (mapCard !== null) {
       map.removeChild(mapCard);
     }
-    for (var i = 1; i < mapPin2.length; i++) {
-      map.removeChild(mapPin2[i]);
+    for (var i = 1; i < mapPinsAll.length; i++) {
+      map.removeChild(mapPinsAll[i]);
     }
-    var newMassPin = window.filter(nearByAds);
+    var newMassPin = window.getFilter(nearByAds);
     mapsPinGenerate(newMassPin);
     var mapPins = document.querySelectorAll('.map__pin');
     for (i = 0; i < mapPins.length; i++) {
@@ -213,7 +213,7 @@
   });
 
   noticeForm.addEventListener('submit', function (evt) {
-    window.upload(new FormData(noticeForm), function () {
+    window.getUpload(new FormData(noticeForm), function () {
       noticeForm.reset();
       map.classList.add('map--faded');
       noticeForm.classList.add('notice__form--disabled');

@@ -147,9 +147,10 @@
     var imgPins = map.querySelectorAll('img');
     var mapCard = document.querySelector('.map__card');
     if (activeElement.src + '' !== 'undefined') {
-      var activeElemsrc = activeElement.src.split('499041-keksobooking/');
+      var activeElemsrc = activeElement.src.split('/');
       for (var i = 0; i < nearByAds.length; i++) {
-        if (activeElemsrc[1] === nearByAds[i].author.avatar) {
+        var nearByAdssrc = nearByAds[i].author.avatar.split('/');
+        if (activeElemsrc[activeElemsrc.length-1] === nearByAdssrc[nearByAdssrc.length-1]) {
           if (mapCard !== null) {
             var sp1 = map.appendChild(window.card(nearByAds[i]));
             map.replaceChild(sp1, mapCard);

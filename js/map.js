@@ -160,7 +160,7 @@
                 var sp1 = map.appendChild(window.getCard(nearByAds[j]));
                 map.replaceChild(sp1, mapCard);
               } else {
-                map.appendChild(window.card(nearByAds[j]));
+                map.appendChild(window.getCard(nearByAds[j]));
               }
             }
           }

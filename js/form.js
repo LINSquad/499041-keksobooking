@@ -9,12 +9,14 @@
   var typeHome = document.querySelector('#type');
   var priceHome = document.querySelector('#price');
 
+  priceHome.min = '1000';
+
   typeHome.addEventListener('change', function () {
     if (typeHome.value === 'bungalo') {
       priceHome.min = '0';
-    } else if (typeHoume.value === 'flat') {
+    } else if (typeHome.value === 'flat') {
       priceHome.min = '1000';
-    } else if (typeHoume.value === 'house') {
+    } else if (typeHome.value === 'house') {
       priceHome.min = '5000';
     } else {
       priceHome.min = '10000';
@@ -39,6 +41,12 @@
   var roomNumber = document.querySelector('#room_number');
   var options = document.querySelector('#capacity').querySelectorAll('option');
   var capacity = document.querySelector('#capacity');
+
+  capacity.value = '1';
+  options[0].disabled = 'disabled';
+  options[1].disabled = 'disabled';
+  options[2].disabled = '';
+  options[3].disabled = 'disabled';
 
   roomNumber.addEventListener('change', function () {
     if (roomNumber.value === '1') {

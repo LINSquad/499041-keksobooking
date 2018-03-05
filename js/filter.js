@@ -1,4 +1,3 @@
-'use strict';
 (function () {
   var filters = document.querySelector('.map__filters');
   var housingType = filters.querySelector('#housing-type');
@@ -16,10 +15,7 @@
   var pricesHigh = 'high';
 
   function housingTypeFilter(element) {
-    if (housingType.value === 'any') {
-      return true;
-    }
-    if (housingType.value === element.offer.type) {
+    if (housingType.value === 'any' || housingType.value === element.offer.type) {
       return true;
     }
     return false;
@@ -36,19 +32,13 @@
     return false;
   }
   function housingRoomsFilter(element) {
-    if (housingRooms.value === 'any') {
-      return true;
-    }
-    if (housingRooms.value + '' === element.offer.rooms + '') {
+    if (housingRooms.value === 'any' || housingRooms.value + '' === element.offer.rooms + '') {
       return true;
     }
     return false;
   }
   function housingGuestsFilter(element) {
-    if (housingGuests.value === 'any') {
-      return true;
-    }
-    if (housingGuests.value + '' === element.offer.guests + '') {
+    if (housingGuests.value === 'any' || housingGuests.value + '' === element.offer.guests + '') {
       return true;
     }
     return false;

@@ -44,8 +44,8 @@
     }
     return false;
   }
-  function filterFeature(element, filters) {
-    if (filters.checked === true) {
+  function filterFeature(element, filtersNew) {
+    if (filtersNew.checked === true) {
       if (element.offer.features.length !== 0) {
         for (var k = 0; k < element.offer.features.length; k++) {
           if (element.offer.features[k] === filters.value) {

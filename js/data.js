@@ -55,76 +55,76 @@
   var photosCopy = PHOTOS.slice();
   var avatarsCopy = AVATARS.slice();
 
-  var randomAvatar = function (mass) {
-    var randomNumber = Math.round((mass.length - 1) * Math.random());
+  var randomAvatarGeneration = function (array) {
+    var randomNumber = Math.round((array.length - 1) * Math.random());
     var element = mass[randomNumber];
-    mass.splice(randomNumber, 1);
+    array.splice(randomNumber, 1);
 
     return element;
   };
 
-  var randomElement = function (mass) {
-    var randomNumber = Math.round((mass.length - 1) * Math.random());
-    return mass[randomNumber];
+  var randomElementGeneration = function (array) {
+    var randomNumber = Math.round((array.length - 1) * Math.random());
+    return array[randomNumber];
   };
 
-  var randomMass = function () {
+  var randomArrayGeneration = function () {
     var photoCopy = PHOTOS.slice();
     var len = photoCopy.length;
-    var newMass = [];
+    var newArray = [];
     for (var i = 0; i < len; i++) {
       var randomsNumber = Math.round((photoCopy.length - 1) * Math.random());
       var element = photoCopy[randomsNumber];
       photoCopy.splice(randomsNumber, 1);
-      newMass[i] = element;
+      newArray[i] = element;
     }
 
-    return newMass;
+    return newArray;
   };
 
-  var randomLenght = function (mass) {
-    var len = Math.round(mass.length * Math.random());
-    var newMass = [];
+  var randomLenghtGeneration = function (array) {
+    var len = Math.round(array.length * Math.random());
+    var newArray = [];
     for (var i = 0; i < len; i++) {
-      var randomNumber = Math.round((mass.length - 1) * Math.random());
-      var element = mass[randomNumber];
-      mass.splice(randomNumber, 1);
-      newMass[i] = element;
+      var randomNumber = Math.round((array.length - 1) * Math.random());
+      var element = array[randomNumber];
+      array.splice(randomNumber, 1);
+      newArray[i] = element;
     }
 
-    return newMass;
+    return newArray;
   };
 
-  var randomNumber = function (min, max) {
+  var randomNumberGeneration = function (min, max) {
     return Math.round(Math.random() * (max - min) + min);
   };
 
 
   window.data = function () {
-    var locatX = randomNumber(900, 300);
-    var locatY = randomNumber(500, 150);
+    var coordX = randomNumber(900, 300);
+    var coordY = randomNumber(500, 150);
     return {
       author: {
-        avatar: randomAvatar(avatarsCopy)
+        avatar: randomAvatarGeneration(avatarsCopy)
       },
 
       offer: {
-        title: randomElement(titlesCopy),
-        address: (locatX + PIN_WIDTH / 2) + ', ' + (locatY + PIN_HEIGHT),
-        price: randomNumber(1000000, 1000),
-        type: randomElement(typesCopy),
-        rooms: randomNumber(5, 1),
-        guests: randomNumber(50, 1),
-        checkin: randomElement(checkinsCopy),
-        checkout: randomElement(checkinsCopy),
-        features: randomLenght(featuresCopy),
+        title: randomElementGeneration(titlesCopy),
+        address: (coordX + PIN_WIDTH / 2) + ', ' + (coordY + PIN_HEIGHT),
+        price: randomNumberGeneration(1000000, 1000),
+        type: randomElementGeneration(typesCopy),
+        rooms: randomNumberGeneration(5, 1),
+        guests: randomNumberGeneration(50, 1),
+        checkin: randomElementGeneration(checkinsCopy),
+        checkout: randomElementGeneration(checkinsCopy),
+        features: randomLenghtGeneration(featuresCopy),
         description: '',
-        photos: randomMass(photosCopy)
+        photos: randomArrayGeneration(photosCopy)
       },
 
       locat: {
-        x: locatX,
-        y: locatY
+        x: coordX,
+        y: coordY
       }
     };
   };

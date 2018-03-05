@@ -48,7 +48,7 @@
     if (filtersNew.checked === true) {
       if (element.offer.features.length !== 0) {
         for (var k = 0; k < element.offer.features.length; k++) {
-          if (element.offer.features[k] === filters.value) {
+          if (element.offer.features[k] === filtersNew.value) {
             k = element.offer.features.length;
             return true;
           }

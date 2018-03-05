@@ -151,10 +151,10 @@
     if (activeElement.src + '' !== 'undefined') {
       var activeElemsrc = activeElement.src.split('/');
       for (var i = 0; i < imgPins.length - 1; i++) {
-        var imgPinsrc = imgPins[i + 1].src.split('/');  
+        var imgPinsrc = imgPins[i + 1].src.split('/'); 
         if (activeElemsrc[activeElemsrc.length - 1] === imgPinsrc[imgPinsrc.length - 1]) {
-          for(var j = 0; j < nearByAds.length; j++) {      
-            if(mapPins[i + 1].style.left === (nearByAds[j].location.x + PIN_WIDTH / 2)  + 'px' &&
+          for (var j = 0; j < nearByAds.length; j++) {
+            if (mapPins[i + 1].style.left === (nearByAds[j].location.x + PIN_WIDTH / 2) + 'px' &&
               mapPins[i + 1].style.top === (nearByAds[j].location.y + PIN_HEIGHT) + 'px') {
               if (mapCard !== null) {
                 var sp1 = map.appendChild(window.card(nearByAds[j]));

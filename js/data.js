@@ -57,7 +57,7 @@
 
   var randomAvatarGeneration = function (array) {
     var randomNumber = Math.round((array.length - 1) * Math.random());
-    var element = mass[randomNumber];
+    var element = array[randomNumber];
     array.splice(randomNumber, 1);
 
     return element;
@@ -101,8 +101,8 @@
 
 
   window.data = function () {
-    var coordX = randomNumber(900, 300);
-    var coordY = randomNumber(500, 150);
+    var coordX = randomNumberGeneration(900, 300);
+    var coordY = randomNumberGeneration(500, 150);
     return {
       author: {
         avatar: randomAvatarGeneration(avatarsCopy)

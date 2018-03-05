@@ -3,23 +3,23 @@
   var similarTemplate = document.querySelector('template').content.querySelector('article');
   var fragment = document.createDocumentFragment();
 
-  window.card = function (element) {
+  window.getCard = function (element) {
     var newPosts = similarTemplate.cloneNode(true);
     var arrayLine = newPosts.querySelectorAll('p');
-    var elementInnerText = function (elem, str) {
+    var getElementInnerText = function (elem, str) {
       newPosts.querySelector(elem).innerText = str;
     };
     newPosts.className = 'map__card';
-    elementInnerText('h3', element.offer.title);
-    elementInnerText('small', element.offer.address);
-    elementInnerText('.popup__price', element.offer.price.toLocaleString() + ' ₽/ночь');
+    getElementInnerText('h3', element.offer.title);
+    getElementInnerText('small', element.offer.address);
+    getElementInnerText('.popup__price', element.offer.price.toLocaleString() + ' ₽/ночь');
 
     if (element.offer.type === 'flat') {
-      elementInnerText('h4', 'Квартира');
+      getElementInnerText('h4', 'Квартира');
     } else if (element.offer.type === 'bungalo') {
-      elementInnerText('h4', 'Бунгало');
+      getElementInnerText('h4', 'Бунгало');
     } else {
-      elementInnerText('h4', 'Дом');
+      getElementInnerText('h4', 'Дом');
     }
 
     var room = ' комнаты';

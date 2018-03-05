@@ -77,7 +77,7 @@
     return filterFeature(element, filterConditioner);
   }
 
-  window.filter = function (nearByAds) {
+  window.getFilter = function (nearByAds) {
     return nearByAds.filter(function (item) {
       return housingTypeFilter(item) && housingPriceFilter(item) && housingRoomsFilter(item) &&
       housingGuestsFilter(item) && filtrateWifi(item) && filtrateDish(item) && filtratePark(item) &&

@@ -14,15 +14,16 @@
   var pricesMiddle = 'middle';
   var pricesLow = 'low';
   var pricesHigh = 'high';
+  var pricesAny = 'any';
 
   function housingTypeFilter(element) {
-    if (housingType.value === 'any' || housingType.value === element.offer.type) {
+    if (housingType.value === pricesAny || housingType.value === element.offer.type) {
       return true;
     }
     return false;
   }
   function housingPriceFilter(element) {
-    if (housingPrice.value === 'any') {
+    if (housingPrice.value === pricesAny) {
       return true;
     }
     if (housingPrice.value === pricesMiddle && element.offer.price >= 10000 && element.offer.price <= 50000 ||
@@ -33,13 +34,13 @@
     return false;
   }
   function housingRoomsFilter(element) {
-    if (housingRooms.value === 'any' || housingRooms.value + '' === element.offer.rooms + '') {
+    if (housingRooms.value === pricesAny || housingRooms.value + '' === element.offer.rooms + '') {
       return true;
     }
     return false;
   }
   function housingGuestsFilter(element) {
-    if (housingGuests.value === 'any' || housingGuests.value + '' === element.offer.guests + '') {
+    if (housingGuests.value === pricesAny || housingGuests.value + '' === element.offer.guests + '') {
       return true;
     }
     return false;
